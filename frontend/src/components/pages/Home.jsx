@@ -1,11 +1,9 @@
-import { ContainerHome, ContenMain } from "./styles/styledHome";
 import Header from "../Header";
 import Footer from "../Footer"
 
 const Home = () => {
   return (
     <>
-      <ContainerHome>
         {/* Componente HEADER  */}
         <Header/>
 
@@ -13,7 +11,6 @@ const Home = () => {
         
         {/* Componente FOOTER  */}
         <Footer/>
-      </ContainerHome>
     </>
   );
 }

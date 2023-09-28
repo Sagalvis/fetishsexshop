@@ -8,7 +8,12 @@ export const ContainnerMain = styled.div`
   /* justify-items: center; */
   justify-content: center;
 `; 
-export const Text = styled.h1`
-  color: red;
-  font-weight: 500;
+
+export const ContentMain = styled.div`
+  display: block;
+  box-sizing: border-box;
+  background-color: #222;
+  width: 100%;
+  height: 80%;
+  padding: 24px;
 `; 
