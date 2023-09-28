@@ -1,13 +1,15 @@
-import { ContainerHeader, Label, NavItem, NavLink, NavLogoContain, NavbarContain } from "./styles/styledHeader";
+import { useState } from "react";
+import { /* ButtonWhatsapp */ ContainerHeader, Label, NavItem, NavLink, NavLogoContain, NavToggle, NavbarContain, Span } from "./styles/styledHeader";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false)
   return ( <>
     <ContainerHeader>
       <NavbarContain>
         <NavLogoContain>
 
         </NavLogoContain>
-        <NavItem>
+        <NavItem className={` ${isOpen && "open"}`}>
           <NavLink>
             <Label>Inicio</Label>
           </NavLink>
@@ -18,6 +20,16 @@ const Header = () => {
             <Label>Politicas</Label>
           </NavLink>
         </NavItem>
+{/*         <ButtonWhatsapp>
+          botton whatsapp
+        </ButtonWhatsapp> */}
+        <NavToggle className={` ${isOpen && "open"}`}
+        onClick={()=> setIsOpen(!isOpen)}
+        >
+          <Span></Span>
+          <Span></Span>
+          <Span></Span>
+        </NavToggle>
       </NavbarContain>
     </ContainerHeader>
   </> );
