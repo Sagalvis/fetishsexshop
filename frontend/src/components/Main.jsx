@@ -1,4 +1,4 @@
-import ContentMain from './styles/styledMain'
+import { ContentMain } from "./styles/styledMain";
 
 const Main = () => {
   return (
