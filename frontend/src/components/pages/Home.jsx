@@ -1,4 +1,4 @@
-import { ContainerHome, ContenMain } from "./styles/styledHome";
+import { ContainerHome} from "./styles/styledHome";
 import Header from "../Header";
 import Footer from "../Footer"
 
