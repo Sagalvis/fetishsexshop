@@ -4,7 +4,7 @@ import Home from "./pages/home";
 import Nosotros from "./pages/Nosotros";
 import Politicas from "./pages/Politicas";
 import NotFound from "./pages/NotFound";
-const Main = () => {
+const IndexRouterMain = () => {
   return ( 
     <ContainnerMain>
       <Routes>
@@ -17,4 +17,4 @@ const Main = () => {
   );
 }
 
-export default Main;
+export default IndexRouterMain;
