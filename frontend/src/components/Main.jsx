@@ -25,22 +25,6 @@ const Main = ({showCards}) => {
           infoPrice={'1 Unidad por solo 100.000 pesos'}
           info={'+ 10.000 pesos de envio por todo el país'}
           />
-          <Cards 
-          infoPrice={'1 Unidad por solo 100.000 pesos'}
-          info={'+ 10.000 pesos de envio por todo el país'}
-          />
-          <Cards 
-          infoPrice={'1 Unidad por solo 100.000 pesos'}
-          info={'+ 10.000 pesos de envio por todo el país'}
-          />
-          <Cards 
-          infoPrice={'1 Unidad por solo 100.000 pesos'}
-          info={'+ 10.000 pesos de envio por todo el país'}
-          />
-          <Cards 
-          infoPrice={'1 Unidad por solo 100.000 pesos'}
-          info={'+ 10.000 pesos de envio por todo el país'}
-          />
         </ContentProductCards>
       )}
     </ContentMain>
