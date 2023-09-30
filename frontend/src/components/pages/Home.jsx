@@ -13,7 +13,9 @@ const Home = () => {
         <Slider />
         
         {/* Compoenente MAIN  */}
-        <Main />
+        <Main 
+        showCards={true}
+        />
 
         {/* Componente FOOTER  */}
         <Footer/>

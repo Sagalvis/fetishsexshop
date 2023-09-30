@@ -1,113 +1,48 @@
-import { ButtonWp, Cards, Content, ContentMain, ContentProductCards, H2, ImgProduct, Info, InfoPriceProduct, InfoTitle, TagA } from "./styles/styledMain";
-import pdt1 from '../assets/imgproducts/imageprueba.jpg'
+import { ContentMain, ContentProductCards, H2, InfoTitle } from "./styles/styledMain";
+import Cards from "./cards";
 
-const Main = () => {
+const Main = ({showCards}) => {
   return (
     <>
     <ContentMain>
+
       <InfoTitle>
         <H2>Información de productos promocionales</H2>
       </InfoTitle>
 
-      <ContentProductCards>
-        <Cards>
-          <Content>
-            <ImgProduct src={pdt1} alt="product"/>
-          </Content>
-          <InfoPriceProduct>
-            <Info>1 Unidad por solo 100.000 pesos</Info>
-            <Info>+ 10.000 pesos de envio por todo el país</Info>
-
-            <TagA href="https://w.app/prueba" target="_blank"><ButtonWp>
-            <i className="fa-brands fa-whatsapp"></i>
-            Comprar en Whatsapp</ButtonWp></TagA>
-          </InfoPriceProduct>
-        </Cards>
-
-        <Cards>
-          <Content>
-            <ImgProduct src={pdt1} alt="product"/>
-          </Content>
-          <InfoPriceProduct>
-            <Info>1 Unidad por solo 100.000 pesos</Info>
-            <Info>+ 10.000 pesos de envio por todo el país</Info>
-
-            <TagA href="https://w.app/prueba" target="_blank"><ButtonWp>
-            <i className="fa-brands fa-whatsapp"></i>
-            Comprar en Whatsapp</ButtonWp></TagA>
-          </InfoPriceProduct>
-        </Cards>
-
-        <Cards>
-          <Content>
-            <ImgProduct src={pdt1} alt="product"/>
-          </Content>
-          <InfoPriceProduct>
-            <Info>1 Unidad por solo 100.000 pesos</Info>
-            <Info>+ 10.000 pesos de envio por todo el país</Info>
-
-            <TagA href="https://w.app/prueba" target="_blank"><ButtonWp>
-            <i className="fa-brands fa-whatsapp"></i>
-            Comprar en Whatsapp</ButtonWp></TagA>
-          </InfoPriceProduct>
-        </Cards>
-
-        <Cards>
-          <Content>
-            <ImgProduct src={pdt1} alt="product"/>
-          </Content>
-          <InfoPriceProduct>
-            <Info>1 Unidad por solo 100.000 pesos</Info>
-            <Info>+ 10.000 pesos de envio por todo el país</Info>
-
-            <TagA href="https://w.app/prueba" target="_blank"><ButtonWp>
-            <i className="fa-brands fa-whatsapp"></i>
-            Comprar en Whatsapp</ButtonWp></TagA>
-          </InfoPriceProduct>
-        </Cards>
-
-        <Cards>
-          <Content>
-            <ImgProduct src={pdt1} alt="product"/>
-          </Content>
-          <InfoPriceProduct>
-            <Info>1 Unidad por solo 100.000 pesos</Info>
-            <Info>+ 10.000 pesos de envio por todo el país</Info>
-
-            <TagA href="https://w.app/prueba" target="_blank"><ButtonWp>
-            <i className="fa-brands fa-whatsapp"></i>
-            Comprar en Whatsapp</ButtonWp></TagA>
-          </InfoPriceProduct>
-        </Cards>
-
-        <Cards>
-          <Content>
-            <ImgProduct src={pdt1} alt="product"/>
-          </Content>
-          <InfoPriceProduct>
-            <Info>1 Unidad por solo 100.000 pesos</Info>
-            <Info>+ 10.000 pesos de envio por todo el país</Info>
-
-            <TagA href="https://w.app/prueba" target="_blank"><ButtonWp>
-            <i className="fa-brands fa-whatsapp"></i>
-            Comprar en Whatsapp</ButtonWp></TagA>
-          </InfoPriceProduct>
-        </Cards>
-
-        <Cards>
-          <Content>
-            <ImgProduct src={pdt1} alt="product"/>
-          </Content>
-          <InfoPriceProduct>
-            <Info>1 Unidad por solo 100.000 pesos</Info>
-            <Info>+ 10.000 pesos de envio por todo el país</Info>
-
-            <TagA href="https://w.app/prueba" target="_blank"><ButtonWp>
-            <i className="fa-brands fa-whatsapp"></i>
-            Comprar en Whatsapp</ButtonWp></TagA>
-          </InfoPriceProduct>
-        </Cards>
-      </ContentProductCards>
+      {/* Operador logico para mostrar las cards */}
+      {showCards && (
+        <ContentProductCards>
+          <Cards 
+          infoPrice={'1 Unidad por solo 100.000 pesos'}
+          info={'+ 10.000 pesos de envio por todo el país'}
+          />
+          <Cards 
+          infoPrice={'1 Unidad por solo 100.000 pesos'}
+          info={'+ 10.000 pesos de envio por todo el país'}
+          />
+          <Cards 
+          infoPrice={'1 Unidad por solo 100.000 pesos'}
+          info={'+ 10.000 pesos de envio por todo el país'}
+          />
+          <Cards 
+          infoPrice={'1 Unidad por solo 100.000 pesos'}
+          info={'+ 10.000 pesos de envio por todo el país'}
+          />
+          <Cards 
+          infoPrice={'1 Unidad por solo 100.000 pesos'}
+          info={'+ 10.000 pesos de envio por todo el país'}
+          />
+          <Cards 
+          infoPrice={'1 Unidad por solo 100.000 pesos'}
+          info={'+ 10.000 pesos de envio por todo el país'}
+          />
+          <Cards 
+          infoPrice={'1 Unidad por solo 100.000 pesos'}
+          info={'+ 10.000 pesos de envio por todo el país'}
+          />
+        </ContentProductCards>
+      )}
     </ContentMain>
     </>
   );
