@@ -12,9 +12,9 @@ const storage = multer.diskStorage({
 // Creamos un middleware para manejar las subidas de imágenes
 export const upload = multer({ storage });
 
-export const getImg = async (req, res) => {
+export const getProduct = async (req, res) => {
   try {
-    const [row] = await pool.query("SELECT * FROM imagen");
+    const [row] = await pool.query("SELECT * FROM productos");
     res.json(row);
   } catch (error) {
     return res.status(500).json({ message: "No se encontro la imagen" });

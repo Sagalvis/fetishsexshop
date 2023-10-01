@@ -11,12 +11,12 @@ imgRouter.post('/imagen', controllimg.upload.single('file'), async(req, res)=>{
     const imagen = {
         name: file.originalname
     }
-    await pool.query("INSERT INTO imagen (ruta) values (?)",[imagen.name])
+    await pool.query("INSERT INTO productos (ruta_img) values (?)",[imagen.name])
     res.status(200).json({
         message: 'Imagen subida correctamente'
     });
 });
 
-imgRouter.get('/getImagen', controllimg.getImg)
+imgRouter.get('/getProduct', controllimg.getProduct)
 
 export default imgRouter;
