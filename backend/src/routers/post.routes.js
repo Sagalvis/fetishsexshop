@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { pool } from "../dbconfig.js";
+import { pool } from "../db.js";
 import * as controllimg from "../controllers/imagen.controller.js";
 
 const imgRouter = Router();
