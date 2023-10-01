@@ -1,4 +1,4 @@
-import {A, ContainerHeader, Div, Label, Li, Logo, Nav, TextLogo, Ul} from "./styles/styledHeader";
+import {A, Button, ContainerHeader, Li, Logo, Navbar, Span, TextLogo, Ul} from "./styles/styledHeader";
 
 const Header = () => {
 
@@ -6,29 +6,26 @@ const Header = () => {
     <>
       <ContainerHeader>
         <Logo>
-          <TextLogo>dev.beecodes</TextLogo>
+          <TextLogo>dev<Span>.beecodes</Span></TextLogo>
         </Logo>
 
-        <Nav>
+        <Navbar>
           <Ul>
             <Li>
-              <A href="" className="active">Inicio</A>
+              <A className='hover active' href="">Inicio</A>
             </Li>
 
             <Li>
-              <A href="">Nosotros</A>
+              <A className='hover' href="">Nosotros</A>
             </Li>
 
             <Li>
-              <A href="">Politicas</A>
+              <A className='hover' href="">Politicas</A>
             </Li>
           </Ul>
-        </Nav>
-        <Label className="hamburger">
-          <Div></Div>
-          <Div></Div>
-          <Div></Div>
-        </Label>
+        </Navbar>
+
+          <A href="http://" target="_blank"><Button>Contactanos</Button></A>
       </ContainerHeader>
     </>
   );
