@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { ContentMain, ContentProductCards, H2, InfoTitle } from "./styles/styledMain";
 import Cards from "./cards";
 
@@ -13,18 +14,7 @@ const Main = ({showCards}) => {
       {/* Operador logico para mostrar las cards */}
       {showCards && (
         <ContentProductCards>
-          <Cards 
-          infoPrice={'1 Unidad por solo 100.000 pesos'}
-          info={'+ 10.000 pesos de envio por todo el país'}
-          />
-          <Cards 
-          infoPrice={'1 Unidad por solo 100.000 pesos'}
-          info={'+ 10.000 pesos de envio por todo el país'}
-          />
-          <Cards 
-          infoPrice={'1 Unidad por solo 100.000 pesos'}
-          info={'+ 10.000 pesos de envio por todo el país'}
-          />
+          <Cards/>
         </ContentProductCards>
       )}
     </ContentMain>

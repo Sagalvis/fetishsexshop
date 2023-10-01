@@ -20,7 +20,7 @@ export const Content = styled.div`
   height: 70%;
 `;
 
-export const ImgProduct = styled.img`
+export const ImgProduct = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 5px;
