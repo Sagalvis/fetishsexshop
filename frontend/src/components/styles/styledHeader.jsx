@@ -4,13 +4,12 @@ import {Link} from 'react-router-dom'
 export const ContainerHeader = styled.div `
   height: 10%;
   width: 100%;
-  box-sizing: border-box;
-  background-color: black; 
+  box-sizing: border-box; 
 `; 
 
 export const NavbarContain = styled.div`
   display: flex;
-  background-color: #fff;
+  background-color: #000000;
   justify-content: center;
   align-items: center;
   width: 100%;
