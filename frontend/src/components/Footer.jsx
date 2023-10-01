@@ -19,8 +19,8 @@ const Footer = () => {
 
         <ContentRedSocial>
           <H2 className="title">Redes sociales</H2>
-          <A href="http://" target="_blank"><i class="fa-brands fa-whatsapp"></i></A>
-          <A href="http://" target="_blank"><i class="fa-brands fa-instagram"></i></A>
+          <A href="http://" target="_blank"><i className="fa-brands fa-whatsapp"></i></A>
+          <A href="http://" target="_blank"><i className="fa-brands fa-instagram"></i></A>
           <A href="http://" target="_blank"><i className="fa-brands fa-facebook"></i></A>
         </ContentRedSocial>
       </FooterInfo>
