@@ -29,7 +29,7 @@ const Cards = () => {
       {product.map((item, index) => (
         <Card key={index}>
           <Content>
-            <ImgProduct>{item.ruta_img}</ImgProduct>
+            <ImgProduct src={item.ruta_img} alt="img_product"/>
           </Content>
           <InfoPriceProduct>
             <Info>{item.nomb_producto}</Info>
