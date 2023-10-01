@@ -1,24 +1,51 @@
-import { ButtonWp, Card, Content, ImgProduct, Info, InfoPriceProduct, TagA } from "./styles/styledCards";
-import pdt1 from '../assets/imgproducts/imageprueba.jpg'
+/* eslint-disable react/prop-types */
+import {
+  ButtonWp,
+  Card,
+  Content,
+  ImgProduct,
+  Info,
+  InfoPriceProduct,
+  TagA,
+} from "./styles/styledCards";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-const Cards = ({infoPrice, info}) => {
+const Cards = () => {
+  const [product, setProduct] = useState([]);
+  const getProduct = async () => {
+    try {
+      const result = await axios.get("http://localhost:3005/getProduct");
+      setProduct(result.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getProduct();
+  }, [setProduct]);
   return (
     <>
-        <Card>
+      {product.map((item, index) => (
+        <Card key={index}>
           <Content>
-            <ImgProduct src={pdt1} alt="product"/>
+            <ImgProduct src={`http://localhost:3005/uploads/${item.ruta_img}`} alt="img"/>
           </Content>
           <InfoPriceProduct>
-            <Info>{infoPrice}</Info>
-            <Info>{info}</Info>
-
-            <TagA href="https://w.app/prueba" target="_blank"><ButtonWp>
-            <i className="fa-brands fa-whatsapp"></i>
-            Comprar en Whatsapp</ButtonWp></TagA>
+            <Info>{item.nomb_producto}</Info>
+            <Info>{item.precio}</Info>
+            <Info>{item.descripcion}</Info>
+            <TagA href="https://w.app/prueba" target="_blank">
+              <ButtonWp>
+                <i className="fa-brands fa-whatsapp"></i>
+                Comprar en Whatsapp
+              </ButtonWp>
+            </TagA>
           </InfoPriceProduct>
         </Card>
+      ))}
     </>
   );
-}
+};
 
 export default Cards;
