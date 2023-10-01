@@ -1,121 +1,91 @@
 import styled from 'styled-components';
-import {Link} from 'react-router-dom'
 
 export const ContainerHeader = styled.div `
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin: 0 auto;
   height: 10%;
   width: 100%;
   box-sizing: border-box;
   background-color: black; 
-`; 
+  color: #fff;
+`;
 
-export const NavbarContain = styled.div`
-  display: flex;
-  background-color: #fff;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  @media (max-width:768px){
+export const Logo = styled.div`
+  @media (max-width: 768px) {
+    display: block;
+    height: 70px;
     display: flex;
-    justify-content: space-around;
-  }
+    align-items: center;
+  };
 `;
 
-export const NavLogoContain = styled.div`
-  background-color: aliceblue;
-  width: 30%;
-  height: 10%;
-  margin-left: 10px;
-  @media (max-width:768px){
-    width: 80%;
-    height: 100%;
-  }
-`;
-
-export const NavItem = styled.div`
-    position: relative;
-    width: 40%;
-    background-color: red;
-    display: flex;
-    justify-content: space-around;
-
-  @media (max-width:768px){
-    position: absolute;
-    top: 10%;
-    left: 0;
-    background-color: #0dff00;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 30%;
-    opacity: 0;
-    &.open{
-      transition:.3s ease;
-      opacity: 1;
-    }
-  }
-`;
-
-export const NavLink = styled(Link)`
-  text-decoration: none;
-  color: white;
-`;
-
-export const Label = styled.p`
-  margin: 0;
-`
-
-
-export const NavToggle = styled.div`
-  display: none;
-  @media (max-width:768px){
-    display: flex;
-    flex-direction: column;
-    & span{
-      width: 30px;
-      height: 4px;
-      background-color: white;
-      margin-bottom: 5px;
-      border-radius: 2px;
-      transform-origin: 5px 0;
-      transition: all .2s linear;
-      cursor: pointer;
-    }
-    &.open > span {
-      transform: rotate(45deg) translate(0, 0);
-    }
-
-    &.open > span:nth-child(2){
-      display: none;
-    }
-    &.open > span:nth-child(3){
-      transform:  rotate(-45deg) translate(-5px, 1px);
-    }
-  }
-`;
-
-export const Span = styled.span`
+export const TextLogo = styled.p`
   
 `;
 
-export const ButtonWhatsapp = styled.div`
-position: relative;
-  background-color: green;
-  width: 15%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @media (max-width:768px){
+export const Nav = styled.nav`
+  @media (max-width: 768px) {
     position: absolute;
-    top: 60px;
     left: 0;
+    top: 0;
+    z-index: 999;
+    width: 280px;
+    height: 100vh;
     background-color: red;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: -webkit-fill-available;
-    transform: translateX(-100%);
-    transition: all .3s ease;
+    transition: .2s;
+    box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
+  };
+`;
+
+export const Ul = styled.ul`
+  display: flex;
+`;
+
+export const Li = styled.li`
+  
+`;
+
+export const A = styled.a`
+  color: #fff;
+  display: block;
+  margin: 0 2px;
+  font-weight: 600;
+  padding: 8px 18px;
+  transition: .2s all ease;
+  border-radius: 5px;
+
+  &:hover {
+    background: #f6f4ff;
+    color: #222;
   }
-`
+
+  &.active {
+    background: red;
+    color: #fff;
+  }
+`;
+
+export const Label = styled.label`
+  &.hamburger {
+    display: none;
+    height: fit-content;
+    cursor: pointer;
+    padding: 3px 8px;
+    border-radius: 5px;
+    transition: .2s all ease;
+  }
+
+  &.hamburger:hover {
+    background: #f6f4ff;
+  }
+`;
+
+export const Div = styled.div`
+  width: 30px;
+  height: 2px;
+  margin: 6px 0;
+  background: #212526;
+`;
