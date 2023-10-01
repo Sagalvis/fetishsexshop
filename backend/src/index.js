@@ -6,6 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(imgRouter);
+app.use('/uploads', express.static('uploads'));
 
 app.listen(3005, () => {
     console.log(`Server is running on port 3005`);
