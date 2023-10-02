@@ -13,7 +13,10 @@ const Home = () => {
         <Slider />
         
         {/* Compoenente MAIN  */}
-        <Main />
+        <Main
+        price={'1 Unidad por solo 100.000 pesos'}
+        infoPrice={'+ 10.000 pesos de envio por todo el país'}
+        />
 
         {/* Componente FOOTER  */}
         <Footer/>
