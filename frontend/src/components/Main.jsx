@@ -1,32 +1,22 @@
-import { ButtonWp, Cards, Content, ContentMain, ContentProductCards, H2, ImgProduct, Info, InfoPriceProduct, InfoTitle, TagA } from "./styles/styledMain";
-import pdt1 from '../assets/imgproducts/imageprueba.jpg'
+/* eslint-disable react/prop-types */
+import { ContentMain, ContentProductCards, H2, InfoTitle } from "./styles/styledMain";
+import Cards from "./cards";
 
-const Main = ({price, infoPrice}) => {
+const Main = ({showCards}) => {
   return (
     <>
     <ContentMain>
+
       <InfoTitle>
         <H2>Información de productos promocionales</H2>
       </InfoTitle>
 
-      <ContentProductCards>
-        <Cards>
-          <Content>
-            <ImgProduct src={pdt1} alt="product"/>
-          </Content>
-          <InfoPriceProduct>
-            <Info>{price}</Info>
-            <Info>{infoPrice}</Info>
-
-            <TagA href="https://w.app/prueba" target=".
-            .
-            _blank"><ButtonWp>
-            <i className="fa-brands fa-whatsapp"></i>
-            Comprar en Whatsapp</ButtonWp></TagA>
-          </InfoPriceProduct>
-        </Cards>
-
-      </ContentProductCards>
+      {/* Operador logico para mostrar las cards */}
+      {showCards && (
+        <ContentProductCards>
+          <Cards/>
+        </ContentProductCards>
+      )}
     </ContentMain>
     </>
   );
