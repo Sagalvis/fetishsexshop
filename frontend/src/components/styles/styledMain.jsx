@@ -7,7 +7,6 @@ export const ContentProductCards = styled.div`
   justify-content: center;
   box-sizing: border-box;
   margin-top: 15px;
-  /* background-color: green; */
   width: 100%;
   height: auto;
 `;

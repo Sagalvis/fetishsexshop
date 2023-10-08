@@ -7,12 +7,12 @@ const Footer = () => {
       <FooterInfo>
 
         <ContentImg>
-          <H2>dev.beecodes</H2>
+          <H2>FetishSex</H2>
           {/* <ImgLogo src="" alt=""/> */}
         </ContentImg>
 
         <ContentAbout>
-          <H2 className="title">Sobre nosotros</H2>
+          <H2 className="title">Acerca de nosotros</H2>
           <P className="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ex quam fugiat voluptatum reprehenderit! Nam dolorum fuga quisquam incidunt eum, tempore quae, obcaecati ratione quam aliquam accusantium corporis quas debitis!</P>
 
         </ContentAbout>
