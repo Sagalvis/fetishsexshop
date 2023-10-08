@@ -35,7 +35,7 @@ const Cards = () => {
             <Info>{item.nomb_producto}</Info>
             <Info>{item.precio}</Info>
             <Info>{item.descripcion}</Info>
-            <TagA href="https://w.app/prueba" target="_blank">
+            <TagA href="https://api.whatsapp.com/send?phone=+573146763972&text=Hola,%20me%20interesaria%20 comprar%20el%20Un%20camisa%20Por%20Valor%20de este mercado" target="_blank">
               <ButtonWp>
                 <i className="fa-brands fa-whatsapp"></i>
                 Comprar en Whatsapp
