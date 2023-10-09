@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import {Link} from "react-router-dom"
 export const ContainerHeader = styled.div `
   display: flex;
   align-items: center;
@@ -10,7 +10,7 @@ export const ContainerHeader = styled.div `
   width: 100%;
   height: auto;
   box-sizing: border-box;
-  background-color: black; 
+  background-color: #690c12; 
   color: #fff;
 
   @media (max-width: 768px) {
@@ -60,21 +60,20 @@ export const Ul = styled.ul`
 
 export const Li = styled.li`
   padding: 5px 10px;
+  
 `;
 
-export const A = styled.a`
-  color: #fff;
+export const LintConten = styled(Link)`
+  color: #ffffff;
   font-size: 1rem;
   font-weight: 500;
   padding: 8px 10px;
   transition: .2s;
-
+  border-radius: 3px;
   @media (max-width: 768px) {
     font-size: 1.2rem;
   }
-
   &.hover {
-
     &:hover {
       background: #fff;
       color: #222;
