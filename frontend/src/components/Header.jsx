@@ -1,25 +1,26 @@
+import { useLocation } from "react-router-dom";
 import {LintConten, Button, ContainerHeader, Li, Logo, Navbar, Span, TextLogo, Ul} from "./styles/styledHeader";
 const Header = () => {
-
+const {pathname} = useLocation();
   return (
     <>
       <ContainerHeader>
-        <Logo>
-          <TextLogo>Fetish<Span>Sex</Span></TextLogo>
+        <Logo to="/">
+          <TextLogo className="tittle">Fetish<Span className="tittle2">Sex</Span></TextLogo>
         </Logo>
 
         <Navbar>
-          <Ul>
-            <Li>
-              <LintConten className='hover active' to="/">Inicio</LintConten>
+          <Ul >
+            <Li >
+              <LintConten $isactive={pathname === "/"} className='hover' to="/">Inicio</LintConten>
             </Li>
 
-            <Li>
-              <LintConten className='hover' to="/nosotros">Nosotros</LintConten>
+            <Li >
+              <LintConten $isactive={pathname === "/nosotros"} className='hover' to="/nosotros">Nosotros</LintConten>
             </Li>
 
-            <Li>
-              <LintConten className='hover' to="/politicas">Politicas</LintConten>
+            <Li >
+              <LintConten $isactive={pathname === "/politicas"} className='hover' to="/politicas">Politicas</LintConten>
             </Li>
           </Ul>
         </Navbar>
