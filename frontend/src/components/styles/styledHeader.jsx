@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {Link} from "react-router-dom"
+
 export const ContainerHeader = styled.div `
   display: flex;
   align-items: center;
@@ -10,7 +11,7 @@ export const ContainerHeader = styled.div `
   width: 100%;
   height: auto;
   box-sizing: border-box;
-  background-color: #690c12; 
+  background-color: #000000; 
   color: #fff;
 
   @media (max-width: 768px) {
@@ -21,12 +22,39 @@ export const ContainerHeader = styled.div `
   }
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(Link)`
   /* background: red; */
 
   @media (max-width: 768px) {
     width: 100%;
     text-align: center;
+  }
+  .tittle{
+    font-family: 'Comic Neue', cursive;
+    color: #ffffff;
+    text-shadow:
+		0 0 5px #ffffff,
+		0 0 10px #ffffff,
+		0 0 20px #ffffff,
+		0 0 40px #202020,
+		0 0 80px #000000,
+		0 0 90px #000000,
+		0 0 100px #000000,
+		0 0 140px #3c3a3a,
+		0 0 180px #000000;
+  }
+  span{
+    color: #ff0000;
+    text-shadow:
+		0 0 5px #690c12,
+		0 0 10px #690c12,
+		0 0 20px #690c12,
+		0 0 40px #570c11,
+		0 0 80px #570c11,
+		0 0 90px #570c11,
+		0 0 100px #570c11,
+		0 0 140px #570c11,
+		0 0 180px #570c11;
   }
 `;
 
@@ -60,7 +88,6 @@ export const Ul = styled.ul`
 
 export const Li = styled.li`
   padding: 5px 10px;
-  
 `;
 
 export const LintConten = styled(Link)`
@@ -68,28 +95,19 @@ export const LintConten = styled(Link)`
   font-size: 1rem;
   font-weight: 500;
   padding: 8px 10px;
-  transition: .2s;
+  transition: all .2s ease-in;
   border-radius: 3px;
+  border-bottom: ${({$isactive}) => (!$isactive ? `transparent` : `1px solid #fff`)};
   @media (max-width: 768px) {
     font-size: 1.2rem;
   }
   &.hover {
     &:hover {
-      background: #fff;
-      color: #222;
-      border-radius: 3px;
+      border-bottom: ${({$isactive}) => ($isactive ? `1px solid #fff` : `1px solid #fff`)};
+      color: #ffffff;
+      border-radius: 5px;
+      transition: all .2s ease-in;
     }
-  }
-
-  &.active {
-    background-color: #fff;
-    border-radius: 5px;
-    color: black;
-
-    @media (max-width: 768px) {
-    background: none;
-    color: #fff;
-  }
   }
 `;
 
