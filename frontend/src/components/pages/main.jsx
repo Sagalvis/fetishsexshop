@@ -7,7 +7,7 @@ const MainProducts = ({showProduct}) => {
     <>
     <ContentMainProducts>
       {showProduct && (
-        <ProductosDisponibles />
+        <ProductosDisponibles/>
       )}
     </ContentMainProducts>
     </>
