@@ -9,6 +9,17 @@ export const Segundocontenedor = styled.div`
   margin: 4rem 2rem;
   display: flex;
   justify-content: space-around;
+
+  @media (max-width: 768px) {
+    margin: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-height: 652px) {
+    margin: 0;
+  }
 `;
 
 export const Contenedortext = styled.div`
@@ -18,6 +29,10 @@ export const Contenedortext = styled.div`
   flex-direction: column;
   justify-content: center;
   font-size: 1.1rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const Aquih2 = styled.h2`
@@ -29,10 +44,18 @@ export const Aquih2 = styled.h2`
   &.info {
     font-size: 1.8rem;
   }
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 export const Aqui2p = styled.p`
   text-align: justify;
+
+  @media (max-height: 652px) {
+    font-size: 14px;
+  }
 `;
 
 export const Ul = styled.ul`
@@ -61,12 +84,21 @@ export const AquiPAbout = styled.p`
 export const ContentImg = styled.div`
   /* background: green; */
   width: 30%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  @media (max-width: 768px) {
+    margin: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Img = styled.img`
-
+  @media (max-height: 652px) {
+    height: 300px;
+  }
 `;
