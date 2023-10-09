@@ -1,4 +1,4 @@
-import { A, ContainerFooter, ContentAbout, ContentCopyright, ContentImg, ContentRedSocial, Copyright, FooterInfo, H2, ImgLogo, P } from "./styles/styledFooter";
+import { A, ContainerFooter, ContentAbout, ContentCopyright, ContentImg, ContentRedSocial, Copyright, FooterInfo, H2, P } from "./styles/styledFooter";
 
 const Footer = () => {
   return (
@@ -8,7 +8,6 @@ const Footer = () => {
 
         <ContentImg>
           <H2>FetishSex</H2>
-          {/* <ImgLogo src="" alt=""/> */}
         </ContentImg>
 
         <ContentAbout>

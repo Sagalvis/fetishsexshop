@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import Nosotros from "./pages/Nosotros";
 import Politicas from "./pages/Politicas";
 import NotFound from "./pages/NotFound";
+
 const IndexRouterMain = () => {
   return ( 
     <ContainerIndexRouter>
