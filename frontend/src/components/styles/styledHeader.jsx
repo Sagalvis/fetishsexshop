@@ -24,6 +24,7 @@ export const ContainerHeader = styled.div `
 
 export const Logo = styled(Link)`
   /* background: red; */
+  text-decoration: none;
 
   @media (max-width: 768px) {
     width: 100%;
