@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {Link} from "react-router-dom"
+
 export const ContainerHeader = styled.div `
   display: flex;
   align-items: center;
@@ -54,7 +55,8 @@ export const Navbar = styled.div`
 `;
 
 export const Ul = styled.ul`
-  display: flex;
+  display: flex; 
+  list-style: none;
   gap: 5px;
 `;
 
@@ -68,6 +70,7 @@ export const LintConten = styled(Link)`
   font-size: 1rem;
   font-weight: 500;
   padding: 8px 10px;
+  text-decoration: none;
   transition: .2s;
   border-radius: 3px;
   @media (max-width: 768px) {
