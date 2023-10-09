@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import Nosotros from "./pages/Nosotros";
 import Politicas from "./pages/Politicas";
 import NotFound from "./pages/NotFound";
+import Products from "./Products";
 
 const IndexRouterMain = () => {
   return ( 
@@ -12,6 +13,7 @@ const IndexRouterMain = () => {
         <Route path="/" element={<Home/>}/>
         <Route path="/nosotros" element={<Nosotros/>}/>
         <Route path="/politicas" element={<Politicas/>}/>
+        <Route path="/product" element={<Products/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     </ContainerIndexRouter>
