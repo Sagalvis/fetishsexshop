@@ -10,7 +10,7 @@ app.use(imgRouter);
 app.use('/uploads', express.static('uploads'));
 
 app.listen(PORT_SERVER, () => {
-    console.log(`Server is running on port 3005`);
+    console.log(`Server is running on port ${PORT_SERVER}`);
 }); 
 
 
