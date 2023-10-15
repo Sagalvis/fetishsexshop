@@ -7,6 +7,7 @@ import NotFound from "../components/pages/NotFound";
 import Products from "../components/Products";
 import * as Rutas from "./routes"
 import Login from "../components/pages/login";
+import Dashboard from "../components/pages/dashboard"
 
 const IndexRouterMain = () => {
   return ( 
@@ -16,6 +17,7 @@ const IndexRouterMain = () => {
         <Route path={Rutas.NOSOTROS} element={<Nosotros/>}/>
         <Route path={Rutas.POLITICAS} element={<Politicas/>}/>
         <Route path={Rutas.PRODUCTOS} element={<Products/>}/>
+        <Route path={Rutas.PRIVATED} element={<Dashboard/>}/>
         <Route path={Rutas.PRIVATE} element={<Login/>}/>
         <Route path={Rutas.NOTFOUND} element={<NotFound/>}/>
       </Routes>

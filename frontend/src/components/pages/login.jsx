@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Login = () => {
@@ -15,7 +16,9 @@ const Login = () => {
             <InputLogin />
           </ContenInput>
         </FormL>
-        <ButtonLogin>Login</ButtonLogin>
+        <ContainerButtton to={"/dashboard"}>
+          <ButtonLogin>Login</ButtonLogin>
+        </ContainerButtton>
       </FormLogin>
       <InfoLogin>
         Fetish <span>Sex</span>
@@ -91,8 +94,9 @@ export const InputLogin = styled.input`
 `;
 
 export const ButtonLogin = styled.button`
-  width: 60%;
-  height: 7%;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 `;
 export const InfoLogin = styled.div`
   background-color: #ffffff;
@@ -125,4 +129,10 @@ export const InfoLogin = styled.div`
   @media (max-width: 340px) {
     font-size: 3rem;
   }
+`;
+
+export const ContainerButtton = styled(Link)`
+  background-color: aqua;
+  width: 30%;
+  height: 5%;
 `;
