@@ -10,7 +10,3 @@ export async function encryptPassword(plaintextPassword) {
     throw error;
   }
 }
-
-export async function compare(textoplano,encrypt){
-  return await bcrypt.compare(textoplano,encrypt);
-}
