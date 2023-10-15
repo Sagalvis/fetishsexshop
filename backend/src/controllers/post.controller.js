@@ -21,17 +21,17 @@ export const postProduct = async (req, res) => {
 export const PostLogin = async (req, res) => {
   try {
     const {correo, contraseña} = req.body;
-    const [Login] = await pool.query('SELECT correo, contraseña rol.rol FROM Login INNER JOIN rol ON Login.rol = rol.rol WHERE correo = ?',[correo]);
-    if(Login.affectedRows>0){
-      const comparePassword = await bcrypt.compare(contraseña, Login[0].contraseña);
+    const [Login] = await pool.query('SELECT correo, contraseña, rol.rol FROM Login INNER JOIN rol ON Login.idrol = rol.idrol WHERE correo = ?',[correo]);
+    const passquery = Login[0].contraseña
+    if(Login){
+      const comparePassword = await bcrypt.compare(contraseña, passquery);
       if(comparePassword){
-        const token = jwt.sing({
-          id: Login[0].id,
+        const token = jwt.sign({
           correo: Login[0].correo
         },
         SECRET_KEY,
         {
-          expireIn: "1h",
+          expiresIn: "1h",
         });
         res.status(200).json({token})
       }else{
@@ -41,6 +41,7 @@ export const PostLogin = async (req, res) => {
       return res.status(400).json({msg:"Usuario no existe"});
     }
   } catch (error) {
+    console.log(error);
     res.status(500).json({error: error })
   }
 }

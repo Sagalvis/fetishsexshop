@@ -1,14 +1,14 @@
 import { Router } from "express";
-import { pool } from "../db.js";
 import * as controllimg from "../controllers/imagen.controller.js";
 import * as controllProducto from "../controllers/post.controller.js"
 
 
-const imgRouter = Router();
+const Routers = Router();
 //Rutas para subir imagenes
-imgRouter.get('/getProduct', controllimg.getProduct)
-imgRouter.post('/postproducto',controllimg.upload.single('file') ,controllProducto.postProduct)
+Routers.get('/getProduct', controllimg.getProduct)
+Routers.post('/postproducto',controllimg.upload.single('file') ,controllProducto.postProduct)
 
-imgRouter.post('/user',controllProducto.PostUser)
+Routers.post('/user',controllProducto.PostUser)
+Routers.post('/Login',controllProducto.PostLogin)
 
-export default imgRouter;
+export default Routers;
