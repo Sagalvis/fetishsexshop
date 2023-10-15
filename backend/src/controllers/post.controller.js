@@ -1,7 +1,8 @@
 import { pool } from "../db.js";
-import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { SECRET_KEY } from "../config.js";
+import { encryptPassword } from "../helper/bcrypt.js";
+import bcrypt from 'bcryptjs';
 // ruta para subir productos con imagenes 
 export const postProduct = async (req, res) => {
   try {
@@ -41,6 +42,22 @@ export const PostLogin = async (req, res) => {
     }
   } catch (error) {
     res.status(500).json({error: error })
-    
+  }
+}
+export const PostUser = async( req, res ) =>{
+  try {
+    const{correo, contraseña, idrol} = req.body;
+    const encrypt = await encryptPassword(contraseña)
+    const[row] = await pool.query("INSERT INTO Login(correo,contraseña,idrol)VALUES(?,?,?)",[correo,encrypt,idrol])
+    return res.json({
+      id:row.insertId,
+      correo,
+      contraseña,
+      idrol,
+      message:"usuario registrado con exito"
+    })
+  } catch (error) {
+    console.error(error); // Puedes agregar un registro del error para debug
+    return res.status(500).json({ message: 'Algo va mal'});
   }
 }
