@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { ContentMain, ContentProductCards, H2, InfoTitle } from "./styles/styledMain";
+import { ContentMain, ContentProductCards, H2t, InfoTitle } from "./styles/styledMain";
 import Cards from "./cards";
 
 const Main = ({showCards}) => {
@@ -8,7 +8,7 @@ const Main = ({showCards}) => {
     <ContentMain>
 
       <InfoTitle>
-        <H2>Información de productos promocionales</H2>
+        <H2t>Información de productos promocionales</H2t>
       </InfoTitle>
 
       {/* Operador logico para mostrar las cards */}

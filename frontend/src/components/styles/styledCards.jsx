@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
-  background-color: #fff;
+  background-color: #ab1d26b5;
   width: 320px;
   height: 450px;
-  box-shadow: 5px 6px 33px -16px rgba(0, 0, 0, 0.225);
+  box-shadow: 5px 6px 33px -16px rgba(255, 255, 255, 0.3);
   border-radius: 5px;
   cursor: pointer;
-
+  color: white;
   transition: transform 0.5s ease;
   &:hover {
     transform: scale(1.02);
@@ -23,7 +23,7 @@ export const Content = styled.div`
 export const ImgProduct = styled.img`
   width: 100%;
   height: 100%;
-  border-radius: 5px;
+  
 `;
 
 export const InfoPriceProduct = styled.div`

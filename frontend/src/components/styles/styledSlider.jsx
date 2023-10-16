@@ -30,15 +30,16 @@ export const ContentImg = styled.div`
 export const SlideImg = styled.img`
   width: 100vw;
   min-width: 100%;
-  height: 65vh; //   height: 91.32vh;
+  height: 69vh; //   height: 91.32vh;
   object-fit: cover;
   transition: .3s ease all;
   position: relative;
   overflow: hidden;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.555);
   @media (max-width: 1024px) {
-    height: 57vh;
+    height: 55vh;
   }
+
 `;
 
 export const Controls = styled.div`

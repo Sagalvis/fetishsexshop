@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContainerFooter = styled.div`
   display: block;
-  background-color: #222;
+  background-color: #151515;
   box-sizing: border-box;
   padding: 25px;
   width: 100%;
@@ -98,7 +98,7 @@ export const A = styled.a`
 `;
 
 export const ContentCopyright = styled.div`
-  background-color: #333;
+  background-color: #222121;
   box-sizing: border-box;
   padding: 10px;
   text-align: center;

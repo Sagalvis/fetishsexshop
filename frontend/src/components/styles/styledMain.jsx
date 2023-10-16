@@ -17,7 +17,7 @@ export const ContentMain = styled.div`
   width: 100%;
   height: auto;
   padding: 24px;
-  /* background-color: blue; */
+  background-color: #000000;
 `;
 
 export const InfoTitle = styled.div`
@@ -27,11 +27,12 @@ export const InfoTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: #f5f5f5 solid 1px;
+  border-bottom: #92000A solid 1px;
 `;
 
-export const H2 = styled.h2`
+export const H2t = styled.h2`
   text-align: center;
   font-size: 2rem;
+  color: #92000A;
   margin-bottom: 15px;
 `;
