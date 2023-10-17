@@ -1,16 +1,26 @@
-import { ContainerHome, ContenMain } from "./styles/styledHome";
 import Header from "../Header";
-import Footer from "../Footer"
+import Main from "../Main";
+import Footer from "../Footer";
+import Slider from "../slider";
+
 const Home = () => {
   return (
     <>
-      <ContainerHome>
-        <Header></Header>
-        <ContenMain></ContenMain>
-        <Footer></Footer>
-      </ContainerHome>
+      {/* Componente HEADER  */}
+      <Header />
+
+      {/* Componente SLIDER */}
+      <Slider />
+
+      {/* Compoenente MAIN  */}
+      <Main 
+      showCards={true}
+      />
+
+      {/* Componente FOOTER  */}
+      <Footer />
     </>
   );
-}
+};
 
 export default Home;

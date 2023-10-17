@@ -1,0 +1,17 @@
+@media (max-width: 1800px) {
+  .imgpc {
+    display: block;
+  }
+  .imgmb {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .imgpc {
+    display: none;
+  }
+  .imgmb {
+    display: block;
+  }
+}
+
