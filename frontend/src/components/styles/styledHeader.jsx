@@ -100,14 +100,14 @@ export const LintConten = styled(Link)`
   text-decoration: none;
   transition: .2s;
   border-radius: 3px;
-  border-bottom: ${({$isactive}) => (!$isactive ? `transparent` : `1px solid #fff`)};
+  border-bottom: ${({$isactive}) => (!$isactive ? `transparent` : `1px solid #ff0000`)};
+  color: ${({$isactive}) => ( !$isactive ? `white` : `red`)};
   @media (max-width: 768px) {
     font-size: 1.2rem;
   }
   &.hover {
     &:hover {
-      border-bottom: ${({$isactive}) => ($isactive ? `1px solid #fff` : `1px solid #fff`)};
-      color: #ffffff;
+      background-color: ${({$isactive}) => ($isactive ? `transparent` : `#ff000047`)};
       border-radius: 5px;
       transition: all .2s ease-in;
     }

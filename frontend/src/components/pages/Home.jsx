@@ -1,7 +1,8 @@
 import Header from "../Header";
 import Main from "../Main";
 import Footer from "../Footer";
-import Slider from "../slider";
+import styled from "styled-components";
+import img1 from "../../assets/pruebaslider/banner1.png"
 
 const Home = () => {
   return (
@@ -9,8 +10,9 @@ const Home = () => {
       {/* Componente HEADER  */}
       <Header />
 
-      {/* Componente SLIDER */}
-      <Slider />
+      <BackgroundHome>
+        <ImgHome src={img1} alt="imagen"/>
+      </BackgroundHome>
 
       {/* Compoenente MAIN  */}
       <Main 
@@ -24,3 +26,13 @@ const Home = () => {
 };
 
 export default Home;
+
+const BackgroundHome = styled.div`
+  width: 100%;
+  height: 75vh;
+  background-color: black;
+`
+const ImgHome = styled.img`
+  width: 100%;
+  height: 75vh;
+`

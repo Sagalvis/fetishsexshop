@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Card = styled.div`
   background-color: #ab1d26b5;
   width: 320px;
-  height: 450px;
+  height: 60vh;
   box-shadow: 5px 6px 33px -16px rgba(255, 255, 255, 0.3);
   border-radius: 5px;
   cursor: pointer;
@@ -17,7 +17,7 @@ export const Card = styled.div`
 export const Content = styled.div`
   background-color: #fff;
   width: 100%;
-  height: 70%;
+  height: 60%;
 `;
 
 export const ImgProduct = styled.img`
@@ -29,20 +29,32 @@ export const ImgProduct = styled.img`
 export const InfoPriceProduct = styled.div`
   /* background-color: red; */
   width: 100%;
-  height: 30%;
+  height: 40%;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   box-sizing: border-box;
 `;
 
 export const Info = styled.p`
-  
+
+  &.title{
+    margin: 0;
+    font-size: 30px;
+    font-weight: 800;
+    text-align: start;
+  }
+  &.descrip{
+    margin: 0;
+    text-align: center;
+  }
 `;
 
 export const TagA = styled.a`
   text-decoration: none;
+      display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const ButtonWp = styled.button`
