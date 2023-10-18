@@ -15,13 +15,17 @@ export const Card = styled.div`
 `;
 
 export const Content = styled.div`
-  background-color: #fff;
+  background-color: #e6a4a8;
   width: 100%;
   height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px 5px 0 0;
 `;
 
 export const ImgProduct = styled.img`
-  width: 100%;
+  width: 90%;
   height: 100%;
   
 `;
@@ -37,7 +41,6 @@ export const InfoPriceProduct = styled.div`
 `;
 
 export const Info = styled.p`
-
   &.title{
     margin: 0;
     font-size: 30px;
