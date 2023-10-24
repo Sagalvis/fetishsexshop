@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import { SECRET_KEY } from "../config.js";
 import { encryptPassword } from "../helper/bcrypt.js";
 import bcrypt from 'bcryptjs';
+
 // ruta para subir productos con imagenes 
 export const postProduct = async (req, res) => {
   try {
@@ -11,7 +12,7 @@ export const postProduct = async (req, res) => {
       name: file.originalname
     }
     const {id_producto, nomb_producto, descripcion} = req.body;
-    const [row] = await pool.query("INSERT INTO productos (id_producto, nomb_producto, descripcion, ruta_img) VALUES (?,?,?,?)",[ id_producto, nomb_producto, descripcion, imagen.name])
+    const [row] = await pool.query("INSERT INTO productos (nomb_producto, descripcion, ruta_img) VALUES (?,?,?)",[ nomb_producto, descripcion, imagen.name])
     res.send(row)
   } catch (error) {
     console.log(error)
@@ -21,39 +22,36 @@ export const postProduct = async (req, res) => {
 export const PostLogin = async (req, res) => {
   try {
     const {correo, contraseña} = req.body;
-    console.log('Valor de correo en req.body:', correo);
-    const [Login] = await pool.query('SELECT correo, contraseña, rol.rol FROM Login INNER JOIN rol ON Login.idrol = rol.idrol WHERE correo = ?',[correo]);
-    
-    console.log(Login)
-    res.send(Login)
-/*     const passquery = Login[0].contraseña
-    if(Login){
-      const comparePassword = await bcrypt.compare(contraseña, passquery);
+    const [row] = await pool.query("SELECT correo, contraseña, rol.rol FROM Login INNER JOIN rol ON Login.idrol = rol.idrol WHERE correo = ?", [correo]);
+    if(row){
+      const comparePassword = await bcrypt.compare(contraseña, row[0].contraseña);
+      
       if(comparePassword){
         const token = jwt.sign({
-          correo: Login[0].correo
+          correo: row[0].correo,
+          rol: row[0].rol
         },
         SECRET_KEY,
         {
           expiresIn: "1h",
         });
-        res.status(200).json({token})
+        res.status(200).json({token});
       }else{
         return res.status(400).json({msg:"Contraseña incorrecta"});
       }
     }else{
       return res.status(400).json({msg:"Usuario no existe"});
-    } */
+    }
   } catch (error) {
-    console.log(error);
-    res.status(500).json({error: error })
+    res.status(500).send(error);
   }
-}
+};
+
 export const PostUser = async( req, res ) =>{
   try {
     const{correo, contraseña, idrol} = req.body;
-    const encrypt = await encryptPassword(contraseña)
-    const[row] = await pool.query("INSERT INTO Login(correo,contraseña,idrol)VALUES(?,?,?)",[correo,encrypt,idrol])
+    const encrypt = await encryptPassword(contraseña);
+    const[row] = await pool.query("INSERT INTO Login(correo,contraseña,idrol)VALUES(?,?,?)",[correo,encrypt,idrol]);
     return res.json({
       id:row.insertId,
       correo,
