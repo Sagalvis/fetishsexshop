@@ -70,7 +70,7 @@ export const Span = styled.span`
   font-weight: 700;
 `;
 
-export const A = styled.a`
+export const Aa = styled.a`
 
 `;
 

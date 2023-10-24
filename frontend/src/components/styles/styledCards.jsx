@@ -15,7 +15,7 @@ export const Card = styled.div`
 `;
 
 export const Content = styled.div`
-  background-color: #e6a4a8;
+  background-color: #eee;
   width: 100%;
   height: 60%;
   display: flex;

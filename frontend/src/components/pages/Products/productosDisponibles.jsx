@@ -1,5 +1,5 @@
 import {
-  A,
+  Aa,
   Aqui2p,
   Aquih2,
   Contenedortext,
@@ -54,7 +54,7 @@ const ProductosDisponibles = () => {
             Te brindamos asesoría a través de WhatsApp y llamadas por teléfono
             movil,{" "}
             <Span>
-              <A href="" target="_blank">Click aquí</A>
+              <Aa href="" target="_blank">Click aquí</Aa>
             </Span>
           </Aqui2p>
         </ContentImg>

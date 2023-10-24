@@ -5,9 +5,12 @@ export const ContainLayout = styled.div`
   width: 100vw;
   display: flex;
   overflow: hidden;
+  justify-content: center;
 `;
 export const ContainPages = styled.div`
-  width: 100%;
+  width: 80%;
   height: 100%;
-  background-color: #f1f0f3;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
 `;

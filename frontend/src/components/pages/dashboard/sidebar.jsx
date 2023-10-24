@@ -59,12 +59,12 @@ const ButtonNarbar1 = [
     id: 1,
     title: "Productos",
     icon: <i className="fa-solid fa-store"></i>,
-    to: "/dashboard",
+    to: "/&/dashboard",
   },
   {
     id: 2,
     title: "Empleado",
     icon: <i className="fa-solid fa-clipboard-user"></i>,
-    to: "/dashboard/staff"
+    to: "/&/dashboard/staff"
   }
 ];

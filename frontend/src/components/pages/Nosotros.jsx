@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import Footer from "../Footer";
 import Header from "../Header";
 
@@ -5,13 +6,23 @@ const Nosotros = () => {
   return (
     <>
     <Header/>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus neque doloremque similique est accusamus, corporis aut dignissimos quibusdam! Quibusdam possimus error eveniet itaque doloribus nulla saepe velit non debitis dicta.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus architecto aspernatur iure consectetur ratione quis dolor. Sunt, debitis voluptatibus eveniet, ab pariatur voluptate magni earum sed, ipsum modi repudiandae doloremque.
-      </p>
+      <ContainerN>
+        VISTA  EN CONSTRUCCÍON 
+      </ContainerN>
       <Footer/>
     </>
   );
 };
 
 export default Nosotros;
+
+const ContainerN = styled.div`
+  width: 100%;
+  height: 64.5%;
+  background-color: #1b1b1b;
+  color: white;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`

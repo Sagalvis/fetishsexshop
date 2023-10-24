@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {Link} from "react-router-dom"
 
 export const ContaiSidebar = styled.div`
-  width: 300px;
+  width: 20%;
   height: 100%;
   background-color: #000000;
   display: flex;
@@ -22,7 +22,7 @@ export const ContainLogo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid  #ffffff;
+  border-bottom: 1px solid  #969696;
 
 `
 export const LogoSidebar = styled.p`
@@ -42,12 +42,12 @@ export const Navbar = styled.div`
 export const NavbarContain = styled.div`
   /* background-color: black; */
   width: 100%;
-  height: 78%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
-  border-bottom: 1px solid  #ffffff;
+  border-bottom: 1px solid  #969696;
 
   @media (max-height: 768px) {
     height: 73%;
@@ -59,7 +59,7 @@ export const NavConten = styled.div`
   height: 40px;
   padding: 10px 0;
   :hover {
-    color: #64CCC5;
+    color: #ff0000;
   }
   transition: all .5s ease;
 
@@ -74,7 +74,7 @@ export const NavLinks = styled(Link)`
   display: flex;
   align-items: center;
   font-size: 16px;
-  color: ${({ $isactive }) => $isactive ? '#cc6464' : 'white'};
+  color: ${({ $isactive }) => $isactive ? '#ff0000' : 'white'};
   text-decoration: none;
 
 `

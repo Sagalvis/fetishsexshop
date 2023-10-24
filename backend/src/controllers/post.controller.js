@@ -21,8 +21,12 @@ export const postProduct = async (req, res) => {
 export const PostLogin = async (req, res) => {
   try {
     const {correo, contraseña} = req.body;
+    console.log('Valor de correo en req.body:', correo);
     const [Login] = await pool.query('SELECT correo, contraseña, rol.rol FROM Login INNER JOIN rol ON Login.idrol = rol.idrol WHERE correo = ?',[correo]);
-    const passquery = Login[0].contraseña
+    
+    console.log(Login)
+    res.send(Login)
+/*     const passquery = Login[0].contraseña
     if(Login){
       const comparePassword = await bcrypt.compare(contraseña, passquery);
       if(comparePassword){
@@ -39,7 +43,7 @@ export const PostLogin = async (req, res) => {
       }
     }else{
       return res.status(400).json({msg:"Usuario no existe"});
-    }
+    } */
   } catch (error) {
     console.log(error);
     res.status(500).json({error: error })
