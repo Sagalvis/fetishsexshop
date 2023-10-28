@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Modals from "../../modal";
 import { ContainInfoModal } from "../../styles/styledModal";
@@ -25,13 +25,22 @@ import {
   Thead,
   Tr,
 } from "./styles/styledProduct";
+import axios from "axios"
 const ProductosDashboard = () => {
   const [handleClose, setHandleClose] = useState(false);
-
+  const [handleEdit, setHandleEdit] = useState(false);
+  const [product, setProduct] = useState([]);
   const handleSumitProduct = async (e) => {
     e.preventDefault();
     console.log("Crear query para los productos");
   };
+
+  const getProduct = async() => {
+    const res = await axios.get("")
+  }
+  useEffect(()=>{
+
+  })
   return (
     <>
       <ContainerMainDashboard>
@@ -67,6 +76,7 @@ const ProductosDashboard = () => {
                   <Td>
                   <ButtonOptions>
                     <Buttons
+                      onClick={() =>  setHandleEdit(!handleEdit)}
                       title="Editar producto"
                     >
                       <i className="fa-solid fa-pen-to-square"></i>
@@ -114,6 +124,38 @@ const ProductosDashboard = () => {
               }}
             >
               Crear Producto
+            </BtnRegister>
+          </ButtonRegister>
+        </ContainInfoModal>
+      </Modals>
+      <Modals
+        status={handleEdit}
+        changeStatus={setHandleEdit}
+        titleModal={"Editar producto"}
+        changeposition={"start"}
+        showHeader={true}
+        showCloseButton={true}
+      >
+        <ContainInfoModal>
+          <ContentInput>
+            <Input placeholder="Nombre del producto" />
+          </ContentInput>
+          <ContentInput>
+            <Input placeholder="Descripcion breve del producto" />
+          </ContentInput>
+          <ContentInput>
+            <Input type="file" />
+          </ContentInput>
+          <ContentInput>
+            <TextArea placeholder="Descripcion completa"/>
+          </ContentInput>
+          <ButtonRegister className="gap">
+            <BtnRegister
+              onClick={() => {
+                handleSumitProduct();
+              }}
+            >
+              Actualizar 
             </BtnRegister>
           </ButtonRegister>
         </ContainInfoModal>
