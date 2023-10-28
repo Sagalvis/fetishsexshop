@@ -20,6 +20,7 @@ import {
   Table,
   Tbody,
   Td,
+  TextArea,
   Th,
   Thead,
   Tr,
@@ -102,6 +103,9 @@ const ProductosDashboard = () => {
           </ContentInput>
           <ContentInput>
             <Input type="file" />
+          </ContentInput>
+          <ContentInput>
+            <TextArea placeholder="Descripcion completa"/>
           </ContentInput>
           <ButtonRegister className="gap">
             <BtnRegister
