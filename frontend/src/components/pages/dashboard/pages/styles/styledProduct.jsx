@@ -43,16 +43,18 @@ export const ContainerTitle = styled.div`
 `;
 
 export const ContainerButton = styled.div`
-  /* background-color: blue; */
-  &:hover {
-    background-color: #e2e2e2;
-  }
-  width: 4%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: none;
   cursor: pointer;
-  font-size: 2rem;
+  transition: all .3s ease;
+  border-radius: 4px;
+  color: #000000;
+
+  &:hover {
+    background: #cecece;
+  }
 `;
 export const ButtonDashboard = styled.button`
   border: none;
@@ -116,7 +118,7 @@ export const ButtonRegister = styled.div`
 export const BtnRegister = styled.button`
   display: inline-block;
   padding: 8px 30px;
-  background-color: #ff0000;
+  background-color: #4360ef;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -124,19 +126,9 @@ export const BtnRegister = styled.button`
   border-radius: 5px;
   border: none;
   cursor: pointer;
-
-  &.btn_red {
-    background-color: #dc3545;
-    &:hover {
-      background-color: #c74753;
-    }
-  }
   &:hover {
     background-color: #000000;
     color: white;
-  }
-  &:active {
-    background-color: #ff0000;
   }
 `;
 

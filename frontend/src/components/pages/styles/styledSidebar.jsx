@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 export const ContaiSidebar = styled.div`
   width: 20%;
   height: 100%;
-  background-color: #000000;
+  background-color: #2d3f99;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,12 +22,13 @@ export const ContainLogo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid  #969696;
+  border-bottom: 1px solid  #eff3f6;
 
 `
 export const LogoSidebar = styled.p`
   font-size: 3rem;
-  color: white;
+  font-weight: 600;
+  color: #ffffff;
 `
 export const Navbar = styled.div`
 /* background-color: #b7ff00; */
@@ -47,7 +48,7 @@ export const NavbarContain = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
-  border-bottom: 1px solid  #969696;
+  border-bottom: 1px solid  #eff3f6;
 
   @media (max-height: 768px) {
     height: 73%;
@@ -59,7 +60,7 @@ export const NavConten = styled.div`
   height: 40px;
   padding: 10px 0;
   :hover {
-    color: #ff0000;
+    color: #43efca;
   }
   transition: all .5s ease;
 
@@ -74,7 +75,7 @@ export const NavLinks = styled(Link)`
   display: flex;
   align-items: center;
   font-size: 16px;
-  color: ${({ $isactive }) => $isactive ? '#ff0000' : 'white'};
+  color: ${({ $isactive }) => $isactive ? '#43efca' : 'white'};
   text-decoration: none;
 
 `

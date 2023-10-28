@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Span} from "../../styles/styledHeader";
 import {
   ButtonLog,
   ContaiSidebar,
@@ -25,7 +24,7 @@ const Sidebar = () => {
     <ContaiSidebar>
       <ContainAll>
         <ContainLogo>
-        <LogoSidebar className="tittle">Fetish<Span style={{color:"red"}} className="tittle2">Sex</Span></LogoSidebar>
+        <LogoSidebar className="tittle">FetishSex</LogoSidebar>
         </ContainLogo>
 
         <Navbar>
@@ -43,7 +42,7 @@ const Sidebar = () => {
           <ContentProfile>
             <ContentName>Velki Daza</ContentName>
             <ContentLogout>
-              <ButtonLog>Cerrar sesión</ButtonLog>
+              <ButtonLog to={"/&/login"}>Cerrar sesión</ButtonLog>
             </ContentLogout>
           </ContentProfile>
         </Navbar>
