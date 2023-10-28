@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Modals from "../../modal";
 import { ContainInfoModal } from "../../styles/styledModal";
@@ -28,11 +28,37 @@ import {
 import axios from "axios"
 const ProductosDashboard = () => {
   const [handleClose, setHandleClose] = useState(false);
+  const [handleEdit, setHandleEdit] = useState(false);
+  const [inventory, setInventory] = useState([]);
 
-  const handleSumitProduct = async (e) => {
-    e.preventDefault();
-    console.log("Crear query para los productos");
+  const getProduct = async() => {
+    const res = await axios.get(`${apiBaseBack}/getProduct`)
+    setInventory(res.data)
+  }
+  useEffect(()=>{
+    getProduct();
+  },[])
+  const [product, setProduct] = useState("");
+  const [descrip, setDescrip] = useState("");
+  const [imgruta, setImgruta] = useState(null);
+  const [des_completa, setDes_completa] = useState("");
+  const apiBaseBack = import.meta.VITE_URL_BACKEND
+
+  const handleSumitProduct = async () => { 
+    try {
+      
+      const formData = new FormData();
+      formData.append("nomb_producto", product);
+      formData.append("description", descrip);
+      formData.append("ruta_img", imgruta);
+      formData.append("descrip_completa", des_completa)
+      await axios.post(`${apiBaseBack}/postproducto`,formData)
+    } catch (error) {
+      console.log("Ocurrió un error", error);
+    }
+    console.log("creado con exito");
   };
+
   return (
     <>
       <ContainerMainDashboard>
@@ -61,10 +87,11 @@ const ProductosDashboard = () => {
                 </Tr>
               </Thead>
               <Tbody>
-                <Tr>
-                  <Td>1</Td>
-                  <Td>Borojo power</Td>
-                  <Td>Sirve hasta para lo que tu menos crees</Td>
+              {inventory.map((item,i)=>(
+                <Tr key={i}>
+                  <Td>{item.id_producto}</Td>
+                  <Td>{item.nomb_producto}</Td>
+                  <Td>{item.descripcion}</Td>
                   <Td>
                   <ButtonOptions>
                     <Buttons
@@ -82,6 +109,8 @@ const ProductosDashboard = () => {
                   </ButtonOptions>
                   </Td>
                 </Tr>
+              ))}
+                
               </Tbody>
             </Table>
           </ContainTable>
