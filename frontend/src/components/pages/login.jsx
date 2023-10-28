@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { ButtonLogin, ContainerButton, ContainerFormL, ContainerInput, ContainerMainLogin, ContenCopyRigth, ContenFormLogin, FormLogin, InputLogin, LabelLogin, TitleLogin } from "./styles/styledLogin";
 import axios from "axios";
+
 const Login = () => {
   const apiBaseBack = import.meta.env.VITE_URL_BACKEND;
   const apiBaseFront = import.meta.env.VITE_URL_FRONTEND;
   const [correo, setCorreo] = useState("");
   const [contraseña, setContraseña] = useState("");
   //Funcion para LogIn
-  const Login = async () => {
+  const LoginUser = async () => {
     try {
       const Log = await axios.post(`${apiBaseBack}/Login`,{
         correo: correo,
@@ -50,7 +51,7 @@ const Login = () => {
             </FormLogin>
             <ContainerButton >
 
-            <ButtonLogin onClick={Login}>
+            <ButtonLogin onClick={LoginUser}>
               Login
             </ButtonLogin>
             </ContainerButton>
