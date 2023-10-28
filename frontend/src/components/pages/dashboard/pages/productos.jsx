@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Modals from "../../modal";
 import { ContainInfoModal } from "../../styles/styledModal";
@@ -28,19 +28,11 @@ import {
 import axios from "axios"
 const ProductosDashboard = () => {
   const [handleClose, setHandleClose] = useState(false);
-  const [handleEdit, setHandleEdit] = useState(false);
-  const [product, setProduct] = useState([]);
+
   const handleSumitProduct = async (e) => {
     e.preventDefault();
     console.log("Crear query para los productos");
   };
-
-  const getProduct = async() => {
-    const res = await axios.get("")
-  }
-  useEffect(()=>{
-
-  })
   return (
     <>
       <ContainerMainDashboard>
@@ -106,16 +98,30 @@ const ProductosDashboard = () => {
       >
         <ContainInfoModal>
           <ContentInput>
-            <Input placeholder="Nombre del producto" />
+            <Input 
+            type="text"
+            placeholder="Nombre del producto" 
+            onChange={(e)=> setProduct(e.target.value)}
+            />
           </ContentInput>
           <ContentInput>
-            <Input placeholder="Descripcion breve del producto" />
+            <Input 
+            type="text"
+            placeholder="Descripcion breve del producto" 
+            onChange={(e)=> setDescrip(e.target.value)}
+            />
           </ContentInput>
           <ContentInput>
-            <Input type="file" />
+            <Input 
+            type="file" 
+            onChange={(e)=> setImgruta(e.target.files[0])}
+            />
           </ContentInput>
           <ContentInput>
-            <TextArea placeholder="Descripcion completa"/>
+            <TextArea 
+            placeholder="Descripcion completa"
+            onChange={(e)=> setDes_completa(e.target.value)}
+            />
           </ContentInput>
           <ButtonRegister className="gap">
             <BtnRegister
