@@ -11,7 +11,7 @@ export const postProduct = async (req, res) => {
     const imagen = {
       name: file.originalname
     }
-    const {id_producto, nomb_producto, descripcion} = req.body;
+    const {nomb_producto, descripcion} = req.body;
     const [row] = await pool.query("INSERT INTO productos (nomb_producto, descripcion, ruta_img) VALUES (?,?,?)",[ nomb_producto, descripcion, imagen.name])
     res.send(row)
   } catch (error) {

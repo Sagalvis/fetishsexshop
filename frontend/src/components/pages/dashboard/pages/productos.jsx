@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import axios from "axios";
 import Modals from "../../modal";
 import { ContainInfoModal } from "../../styles/styledModal";
 import {
@@ -26,11 +26,24 @@ import {
 } from "./styles/styledProduct";
 const ProductosDashboard = () => {
   const [handleClose, setHandleClose] = useState(false);
+  const [product, setProduct] = useState("");
+  const [descrip, setDescrip] = useState("");
+  const [imgruta, setImgruta] = useState("");
+  const apiBaseBack = import.meta.VITE_URL_BACKEND
 
   const handleSumitProduct = async (e) => {
     e.preventDefault();
-    console.log("Crear query para los productos");
+    try {
+      const formData = new FormData();
+      formData.append("nomb_producto", product);
+      formData.append("description", descrip);
+      formData.append("ruta_img", imgruta);
+      await axios.post(`${apiBaseBack}/postproducto`,formData)
+    } catch (error) {
+      console.log("Ocurrió un error", error);
+    }
   };
+
   return (
     <>
       <ContainerMainDashboard>
@@ -95,13 +108,22 @@ const ProductosDashboard = () => {
       >
         <ContainInfoModal>
           <ContentInput>
-            <Input placeholder="Nombre del producto" />
+            <Input 
+            placeholder="Nombre del producto" 
+            onChange={(e)=> setProduct(e.target.value)}
+            />
           </ContentInput>
           <ContentInput>
-            <Input placeholder="Descripcion breve del producto" />
+            <Input 
+            placeholder="Descripcion breve del producto" 
+            onChange={(e)=> setDescrip(e.target.value)}
+            />
           </ContentInput>
           <ContentInput>
-            <Input type="file" />
+            <Input 
+            type="file" 
+            onChange={(e)=> setImgruta(e.target.files[0])}
+            />
           </ContentInput>
           <ButtonRegister className="gap">
             <BtnRegister

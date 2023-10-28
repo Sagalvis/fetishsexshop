@@ -18,7 +18,7 @@ const Login = () => {
         const token = Log.data.token
         localStorage.setItem("user", JSON?.stringify(token))
         setTimeout(()=>{
-          window.location.href=`${apiBaseFront}/dashboard`
+          window.location.href=`${apiBaseFront}/&/dashboard`
         },300)
       }
     } catch (error) {
