@@ -20,6 +20,7 @@ import {
   Table,
   Tbody,
   Td,
+  TextArea,
   Th,
   Thead,
   Tr,
@@ -127,6 +128,9 @@ const ProductosDashboard = () => {
             type="file" 
             onChange={(e)=> setImgruta(e.target.files[0])}
             />
+          </ContentInput>
+          <ContentInput>
+            <TextArea placeholder="Descripcion completa"/>
           </ContentInput>
           <ButtonRegister className="gap">
             <BtnRegister
