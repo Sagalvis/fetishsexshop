@@ -30,15 +30,17 @@ const ProductosDashboard = () => {
   const [product, setProduct] = useState("");
   const [descrip, setDescrip] = useState("");
   const [imgruta, setImgruta] = useState(null);
+  const [des_completa, setDes_completa] = useState("");
   const apiBaseBack = import.meta.VITE_URL_BACKEND
 
-  const handleSumitProduct = async (e) => { 
+  const handleSumitProduct = async () => { 
     try {
-      e.preventDefault()
+      
       const formData = new FormData();
       formData.append("nomb_producto", product);
       formData.append("description", descrip);
       formData.append("ruta_img", imgruta);
+      formData.append("descrip_completa", des_completa)
       await axios.post(`${apiBaseBack}/postproducto`,formData)
     } catch (error) {
       console.log("Ocurrió un error", error);
@@ -130,7 +132,10 @@ const ProductosDashboard = () => {
             />
           </ContentInput>
           <ContentInput>
-            <TextArea placeholder="Descripcion completa"/>
+            <TextArea 
+            placeholder="Descripcion completa"
+            onChange={(e)=> setDes_completa(e.target.value)}
+            />
           </ContentInput>
           <ButtonRegister className="gap">
             <BtnRegister
