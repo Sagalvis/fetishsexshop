@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { ButtonLogin, ContainerButton, ContainerFormL, ContainerInput, ContainerMainLogin, ContenCopyRigth, ContenFormLogin, FormLogin, InputLogin, LabelLogin, TitleLogin } from "./styles/styledLogin";
-
+import axios from "axios";
 const Login = () => {
   const apiBaseBack = import.meta.env.VITE_URL_BACKEND;
   const apiBaseFront = import.meta.env.VITE_URL_FRONTEND;
@@ -34,6 +35,7 @@ const Login = () => {
                 <LabelLogin>EMAIL</LabelLogin>
                 <InputLogin
                 type="email"
+                onChange={(e)=>setCorreo(e.target.value)}
                 required
                 />
               </ContainerInput>
@@ -41,13 +43,14 @@ const Login = () => {
                 <LabelLogin>PASSWORD</LabelLogin>
                 <InputLogin 
                 type="password"
+                onChange={(e)=>setContraseña(e.target.value)}
                 required
                 />
               </ContainerInput>
             </FormLogin>
-            <ContainerButton to={"/&/dashboard"}>
+            <ContainerButton >
 
-            <ButtonLogin>
+            <ButtonLogin onClick={Login}>
               Login
             </ButtonLogin>
             </ContainerButton>

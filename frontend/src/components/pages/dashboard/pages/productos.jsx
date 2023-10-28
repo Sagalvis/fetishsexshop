@@ -28,12 +28,12 @@ const ProductosDashboard = () => {
   const [handleClose, setHandleClose] = useState(false);
   const [product, setProduct] = useState("");
   const [descrip, setDescrip] = useState("");
-  const [imgruta, setImgruta] = useState("");
+  const [imgruta, setImgruta] = useState(null);
   const apiBaseBack = import.meta.VITE_URL_BACKEND
 
-  const handleSumitProduct = async (e) => {
-    e.preventDefault();
+  const handleSumitProduct = async (e) => { 
     try {
+      e.preventDefault()
       const formData = new FormData();
       formData.append("nomb_producto", product);
       formData.append("description", descrip);
@@ -42,6 +42,7 @@ const ProductosDashboard = () => {
     } catch (error) {
       console.log("Ocurrió un error", error);
     }
+    console.log("creado con exito");
   };
 
   return (
@@ -109,12 +110,14 @@ const ProductosDashboard = () => {
         <ContainInfoModal>
           <ContentInput>
             <Input 
+            type="text"
             placeholder="Nombre del producto" 
             onChange={(e)=> setProduct(e.target.value)}
             />
           </ContentInput>
           <ContentInput>
             <Input 
+            type="text"
             placeholder="Descripcion breve del producto" 
             onChange={(e)=> setDescrip(e.target.value)}
             />
