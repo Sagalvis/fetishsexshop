@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 
 import Modals from "../../modal";
@@ -46,7 +47,6 @@ const ProductosDashboard = () => {
 
   const handleSumitProduct = async () => { 
     try {
-      
       const formData = new FormData();
       formData.append("nomb_producto", product);
       formData.append("description", descrip);
