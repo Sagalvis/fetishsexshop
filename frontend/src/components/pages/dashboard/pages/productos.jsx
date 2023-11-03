@@ -101,7 +101,9 @@ const ProductosDashboard = () => {
                     <Td>{item.estado}</Td>
                     <Td>
                       <ButtonOptions>
-                        <Buttons title="Editar producto">
+                        <Buttons 
+                        onClick={() =>setHandleEdit(!handleEdit)}
+                        title="Editar producto">
                           <i className="fa-solid fa-pen-to-square"></i>
                         </Buttons>
                         <Buttons
@@ -162,6 +164,38 @@ const ProductosDashboard = () => {
               }}
             >
               Crear Producto
+            </BtnRegister>
+          </ButtonRegister>
+        </ContainInfoModal>
+      </Modals>
+      <Modals
+        status={handleEdit}
+        changeStatus={setHandleEdit}
+        titleModal={"Editar producto"}
+        changeposition={"start"}
+        showHeader={true}
+        showCloseButton={true}
+      >
+        <ContainInfoModal>
+          <ContentInput>
+            <Input placeholder="Nombre del producto" />
+          </ContentInput>
+          <ContentInput>
+            <Input placeholder="Descripcion breve del producto" />
+          </ContentInput>
+          <ContentInput>
+            <Input type="file" />
+          </ContentInput>
+          <ContentInput>
+            <TextArea placeholder="Descripcion completa"/>
+          </ContentInput>
+          <ButtonRegister className="gap">
+            <BtnRegister
+              onClick={() => {
+                handleSumitProduct();
+              }}
+            >
+              Actualizar 
             </BtnRegister>
           </ButtonRegister>
         </ContainInfoModal>
