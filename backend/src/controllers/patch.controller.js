@@ -22,6 +22,6 @@ export const UpdateProducto = async(req, res) =>{
     const [row] = await pool.query("UPDATE productos set nomb_producto = IFNULL(?,nomb_producto), descripcion = IFNULL(?,descripcion),ruta_img = IFNULL(?,ruta_img) WHERE  id_producto = ?",[nomb_producto,descripcion,imagen.name, id_producto]) 
     res.status(200).json(row)
     } catch (error) {
-        console.error(error);
+      console.error(error);
     }
 }

@@ -7,6 +7,7 @@ const Routers = Router();
 //Rutas para subir imagenes
 Routers.get('/getProduct', controllimg.getProduct);
 Routers.get('/productdash', controllimg.getProductDash);
+Routers.get('/emails', controllProducto.getEmails);
 Routers.post('/postproducto',controllimg.upload.single('file') ,controllProducto.postProduct);
 
 Routers.post('/user',controllProducto.PostUser);

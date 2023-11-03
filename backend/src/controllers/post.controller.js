@@ -61,7 +61,16 @@ export const PostUser = async( req, res ) =>{
       message:"usuario registrado con exito"
     })
   } catch (error) {
-    console.error(error); // Puedes agregar un registro del error para debug
+    console.error(error); 
     return res.status(500).json({ message: 'Algo va mal'});
+  }
+}
+
+export const getEmails = async(req, res) => {
+  try {
+    const [row] = await pool.query("SELECT * FROM Login")
+    res.send(row)
+  } catch (error) {
+    console.error(error);
   }
 }

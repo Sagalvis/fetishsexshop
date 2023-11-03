@@ -240,7 +240,6 @@ const ProductosDashboard = () => {
           </ButtonRegister>
         </ContainInfoModal>
       </Modals>
-
       <Modals
         status={handleDelete}
         changeStatus={setHandleDelete}
