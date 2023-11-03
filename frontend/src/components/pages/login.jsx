@@ -13,6 +13,7 @@ const Login = () => {
         correo: correo,
         contraseña: contraseña
       })
+      console.log(Log);
       if(Log.status === 200){
         const token = Log.data.token
         localStorage.setItem("user", JSON?.stringify(token))
