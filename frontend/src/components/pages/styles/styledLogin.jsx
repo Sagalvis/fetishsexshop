@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom"
 export const ContainerMainLogin = styled.div`
-  background-color: #cbdbfd;
+  background-color: #667492;
   width: 100vw;
   height: 100vh;
   display: flex;

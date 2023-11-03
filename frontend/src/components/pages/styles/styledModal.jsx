@@ -82,3 +82,13 @@ justify-content: center;
 flex-direction: column;
 overflow-x: auto;
 `
+
+export const Paragraph = styled.p`
+  margin: 5px;
+  font-size: 16px;
+  &.size {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.2;
+  }
+  `

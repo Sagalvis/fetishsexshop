@@ -108,11 +108,7 @@ export const ButtonRegister = styled.div`
   box-sizing: border-box;
   margin-bottom: 2%;
   padding-right: 5px;
-  &.gap {
-    display: flex;
-    gap: 4px;
-    margin-top: 2%;
-  }
+  gap: 10px;
 `;
 
 export const BtnRegister = styled.button`
@@ -129,6 +125,9 @@ export const BtnRegister = styled.button`
   &:hover {
     background-color: #000000;
     color: white;
+  }
+  .Delete{
+    background-color: red;
   }
 `;
 

@@ -57,7 +57,7 @@ const Login = () => {
             </ContainerButton>
           </ContenFormLogin>
           <ContenCopyRigth>
-          Copyright &copy; 2023 devSershCodes. All Rights
+          Copyright &copy; 2023 Devsershcodes. All Rights
           </ContenCopyRigth>
         </ContainerFormL>
       </ContainerMainLogin>

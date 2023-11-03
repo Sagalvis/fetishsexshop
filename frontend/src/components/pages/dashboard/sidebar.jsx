@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { PRIVATE } from "../../../routes/routes";
 import {
   ButtonLog,
   ContaiSidebar,
@@ -15,11 +16,13 @@ import {
   Navbar,
   NavbarContain,
 } from "../styles/styledSidebar";
-
 import { useLocation } from "react-router-dom";
 
 const Sidebar = () => {
   const { pathname } = useLocation();
+  const  handleLogout = () => {
+    localStorage.removeItem("user");
+  }
   return (
     <ContaiSidebar>
       <ContainAll>
@@ -40,9 +43,12 @@ const Sidebar = () => {
           </NavbarContain>
 
           <ContentProfile>
-            <ContentName>Velki Daza</ContentName>
+            <ContentName>Administrador</ContentName>
             <ContentLogout>
-              <ButtonLog to={"/&/login"}>Cerrar sesión</ButtonLog>
+              <ButtonLog 
+              to={PRIVATE}
+              onClick={handleLogout} 
+              >Cerrar sesión</ButtonLog>
             </ContentLogout>
           </ContentProfile>
         </Navbar>
@@ -62,7 +68,7 @@ const ButtonNarbar1 = [
   },
   {
     id: 2,
-    title: "Empleado",
+    title: "Cuentas",
     icon: <i className="fa-solid fa-clipboard-user"></i>,
     to: "/&/dashboard/staff"
   }
