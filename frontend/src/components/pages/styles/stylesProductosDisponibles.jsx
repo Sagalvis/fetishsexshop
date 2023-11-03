@@ -98,7 +98,7 @@ export const ContentImg = styled.div`
 `;
 
 export const Img = styled.img`
-  @media (max-height: 652px) {
-    height: 300px;
+  @media (min-height: 574px) {
+    height: 250px;
   }
 `;

@@ -10,6 +10,8 @@ import Login from "../components/pages/login";
 import Dashboard from "../components/pages/dashboard/dashboard"
 
 const IndexRouterMain = () => {
+  const user = localStorage.getItem("user");
+  const isUserLoggedIn = !!user;
   return ( 
     <ContainerIndexRouter>
       <Routes>
@@ -17,8 +19,12 @@ const IndexRouterMain = () => {
         <Route path={Rutas.NOSOTROS} element={<Nosotros/>}/>
         <Route path={Rutas.POLITICAS} element={<Politicas/>}/>
         <Route path={Rutas.PRODUCTOS} element={<Products/>}/>
-        <Route path={Rutas.PRIVATED} element={<Dashboard/>}/>
         <Route path={Rutas.PRIVATE} element={<Login/>}/>
+        {isUserLoggedIn ? (
+          <Route path={Rutas.PRIVATED} element={<Dashboard/>}/>
+        ):(
+          <Route path={Rutas.NOTFOUND} element={<NotFound/>}/>
+        )}
         <Route path={Rutas.NOTFOUND} element={<NotFound/>}/>
       </Routes>
     </ContainerIndexRouter>

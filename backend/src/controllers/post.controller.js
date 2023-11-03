@@ -12,12 +12,13 @@ export const postProduct = async (req, res) => {
       name: file.originalname
     }
     const {nomb_producto, descripcion, descr_completa} = req.body;
-    const [row] = await pool.query("INSERT INTO productos (nomb_producto, descripcion, ruta_img, descr_completa) VALUES (?,?,?,?)",[ nomb_producto, descripcion, imagen.name, descr_completa])
+    const [row] = await pool.query("INSERT INTO productos (nomb_producto, descripcion, ruta_img, descr_completa, estado) VALUES (?,?,?,?,'Activo')",[ nomb_producto, descripcion, imagen.name, descr_completa])
     res.send(row)
   } catch (error) {
     console.log(error)
   }
 }
+
 //Query para inicio de sesion
 export const PostLogin = async (req, res) => {
   try {
@@ -60,7 +61,16 @@ export const PostUser = async( req, res ) =>{
       message:"usuario registrado con exito"
     })
   } catch (error) {
-    console.error(error); // Puedes agregar un registro del error para debug
+    console.error(error); 
     return res.status(500).json({ message: 'Algo va mal'});
+  }
+}
+
+export const getEmails = async(req, res) => {
+  try {
+    const [row] = await pool.query("SELECT * FROM Login")
+    res.send(row)
+  } catch (error) {
+    console.error(error);
   }
 }

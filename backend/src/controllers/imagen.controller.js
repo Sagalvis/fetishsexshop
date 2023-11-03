@@ -14,9 +14,18 @@ export const upload = multer({ storage });
 
 export const getProduct = async (req, res) => {
   try {
-    const [row] = await pool.query("SELECT * FROM productos");
+    const [row] = await pool.query("SELECT * FROM productos WHERE estado = 'Activo' ");
     res.json(row);
   } catch (error) {
-    return res.status(500).json({ message: "No se encontro la imagen" });
+    return res.status(500).json({ message: error });
   }
 };
+
+export const getProductDash = async(req, res) => {
+  try {
+    const [row] = await pool.query("SELECT * FROM productos ");
+    res.json(row);
+  } catch (error) {
+    return res.status(500).json({ message: error });
+  }
+}; 
