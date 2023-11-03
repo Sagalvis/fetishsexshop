@@ -36,11 +36,14 @@ const ProductosDashboard = () => {
   const [descrip, setDescrip] = useState("");
   const [imgruta, setImgruta] = useState(null);
   const [des_completa, setDes_completa] = useState("");
+  const [update, setUpdate] = useState([]);
+  const [idproducto, setIdproduct] = useState("");
   const apiBaseBack = import.meta.env.VITE_URL_BACKEND;
 
   const getProduct = async () => {
     const res = await axios.get(`${apiBaseBack}/productdash`);
     setInventory(res.data);
+    console.log(res.data);
   };
 
   const handleSumitProduct = async () => {
@@ -56,6 +59,25 @@ const ProductosDashboard = () => {
       alert("Ocurrió un error", error);
     }
   };
+
+  const captura = (item) => {
+    setUpdate(item)
+    setIdproduct(item.id_producto)
+    setHandleEdit(!handleEdit)
+  }
+  const UpdateProduct = async () => {
+    try {
+      const formData = new FormData();
+      formData.append("nomb_producto", product);
+      formData.append("descripcion", descrip);
+      formData.append("descr_completa", des_completa);
+      formData.append("file", imgruta);
+      await axios.patch(`${apiBaseBack}/product/${idproducto}`, formData)
+      alert('Actualizado con exito')
+    } catch (error) {
+      console.log(error);
+    }
+  }
   const DeleteProduct = () => {
     setHandleDelete(!handleDelete);
   };
@@ -102,7 +124,9 @@ const ProductosDashboard = () => {
                     <Td>
                       <ButtonOptions>
                         <Buttons 
-                        onClick={() =>setHandleEdit(!handleEdit)}
+                        onClick={() => {
+                          captura(item)
+                        }}
                         title="Editar producto">
                           <i className="fa-solid fa-pen-to-square"></i>
                         </Buttons>
@@ -168,6 +192,7 @@ const ProductosDashboard = () => {
           </ButtonRegister>
         </ContainInfoModal>
       </Modals>
+
       <Modals
         status={handleEdit}
         changeStatus={setHandleEdit}
@@ -178,53 +203,36 @@ const ProductosDashboard = () => {
       >
         <ContainInfoModal>
           <ContentInput>
-            <Input placeholder="Nombre del producto" />
+            <Input 
+            value={update.nomb_producto}
+            onChange={(e) => setProduct(e.target.value)}
+            placeholder="Nombre del producto" 
+            />
           </ContentInput>
           <ContentInput>
-            <Input placeholder="Descripcion breve del producto" />
+            <Input 
+            value={update.descripcion}
+            onChange={(e) => setDescrip(e.target.value)}
+            placeholder="Descripcion breve del producto" 
+            />
           </ContentInput>
           <ContentInput>
-            <Input type="file" />
+            <Input 
+            type="file"
+            onChange={(e) => setImgruta(e.target.value)} 
+            />
           </ContentInput>
           <ContentInput>
-            <TextArea placeholder="Descripcion completa"/>
+            <TextArea 
+            value={update.descr_completa}
+            onChange={(e) => setDes_completa(e.target.value)}
+            placeholder="Descripcion completa" 
+            />
           </ContentInput>
           <ButtonRegister className="gap">
             <BtnRegister
               onClick={() => {
-                handleSumitProduct();
-              }}
-            >
-              Actualizar 
-            </BtnRegister>
-          </ButtonRegister>
-        </ContainInfoModal>
-      </Modals>
-      <Modals
-        status={handleEdit}
-        changeStatus={setHandleEdit}
-        titleModal={"Editar producto"}
-        changeposition={"start"}
-        showHeader={true}
-        showCloseButton={true}
-      >
-        <ContainInfoModal>
-          <ContentInput>
-            <Input placeholder="Nombre del producto" />
-          </ContentInput>
-          <ContentInput>
-            <Input placeholder="Descripcion breve del producto" />
-          </ContentInput>
-          <ContentInput>
-            <Input type="file" />
-          </ContentInput>
-          <ContentInput>
-            <TextArea placeholder="Descripcion completa" />
-          </ContentInput>
-          <ButtonRegister className="gap">
-            <BtnRegister
-              onClick={() => {
-                handleSumitProduct();
+                UpdateProduct();
               }}
             >
               Actualizar
@@ -232,6 +240,7 @@ const ProductosDashboard = () => {
           </ButtonRegister>
         </ContainInfoModal>
       </Modals>
+
       <Modals
         status={handleDelete}
         changeStatus={setHandleDelete}
