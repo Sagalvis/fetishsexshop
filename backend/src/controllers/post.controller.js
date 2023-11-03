@@ -19,10 +19,6 @@ export const postProduct = async (req, res) => {
   }
 }
 
-export const patchPorduct = async (req, res) => {
-  /* CREAR CONSULTA PARA ACTUALIZAR PRODUCTOS */
-}
-
 //Query para inicio de sesion
 export const PostLogin = async (req, res) => {
   try {

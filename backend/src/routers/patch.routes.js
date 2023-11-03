@@ -4,6 +4,6 @@ import * as controllimg from "../controllers/imagen.controller.js"
 
 const PatchRouter = Router();
 
-PatchRouter.patch('/estado/:id_producto', PatchController.DeleteProduct);
+PatchRouter.patch('/estado/:id_producto', PatchController.DesactiveProduct);
 PatchRouter.patch("/product/:id_producto", controllimg.upload.single('file'), PatchController.UpdateProducto)
 export default PatchRouter;
