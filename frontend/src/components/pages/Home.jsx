@@ -31,8 +31,16 @@ const BackgroundHome = styled.div`
   width: 100%;
   height: 75vh;
   background-color: black;
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
 `
 const ImgHome = styled.img`
   width: 100%;
   height: 75vh;
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
 `
