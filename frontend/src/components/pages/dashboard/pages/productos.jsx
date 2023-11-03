@@ -201,38 +201,6 @@ const ProductosDashboard = () => {
         </ContainInfoModal>
       </Modals>
       <Modals
-        status={handleEdit}
-        changeStatus={setHandleEdit}
-        titleModal={"Editar producto"}
-        changeposition={"start"}
-        showHeader={true}
-        showCloseButton={true}
-      >
-        <ContainInfoModal>
-          <ContentInput>
-            <Input placeholder="Nombre del producto" />
-          </ContentInput>
-          <ContentInput>
-            <Input placeholder="Descripcion breve del producto" />
-          </ContentInput>
-          <ContentInput>
-            <Input type="file" />
-          </ContentInput>
-          <ContentInput>
-            <TextArea placeholder="Descripcion completa" />
-          </ContentInput>
-          <ButtonRegister className="gap">
-            <BtnRegister
-              onClick={() => {
-                handleSumitProduct();
-              }}
-            >
-              Actualizar
-            </BtnRegister>
-          </ButtonRegister>
-        </ContainInfoModal>
-      </Modals>
-      <Modals
         status={handleDelete}
         changeStatus={setHandleDelete}
         titleModal={"Eliminar producto"}
